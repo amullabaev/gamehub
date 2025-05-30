@@ -5,8 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"npm run start --workspace=frontend\" \"npm run start --workspace=backend\"",
-    "dev:frontend": "npm run dev --workspace=frontend",
+    "start": "concurrently \"pnpm run start --workspace=frontend\" \"npm run start --workspace=backend\"",
+    "dev:frontend": "pnpm run dev --workspace=frontend",
     "dev:backend": "npm run dev --workspace=backend",
     "lint": "eslint ."
   },
