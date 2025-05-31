@@ -5,10 +5,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"pnpm run start --workspace=frontend\" \"npm run start --workspace=backend\"",
     "dev:frontend": "pnpm run dev --workspace=frontend",
     "dev:backend": "npm run dev --workspace=backend",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "dev": "concurrently \"pnpm --filter frontend dev\" \"pnpm --filter backend dev\""
   },
   "keywords": [],
   "author": "",
