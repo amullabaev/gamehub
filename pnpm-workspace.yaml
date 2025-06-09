@@ -1,5 +1,6 @@
 packages:
   - frontend
+  - gamehub-ng
   - backend
   - shared
 ignoredBuiltDependencies:
