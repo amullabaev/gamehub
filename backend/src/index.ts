@@ -11,14 +11,17 @@ const port = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
+app.listen(port, (err) => {
+  if (err) {
+    console.error("Error starting server:", err);
+  } else {
+    console.log(`Server is running at http://localhost:${port}`);
+  }
+});
+
 app.get("/api/health", (_req, res) => {
   res.json({ status: "ok" });
 });
-
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
-
 
 const prisma = new PrismaClient();
 
