@@ -1,8 +1,7 @@
-import { HttpClient, httpResource } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { RouterOutlet } from '@angular/router';
-import {MatButtonModule} from '@angular/material/button';
-import { HomePageComponent } from './home-page/home-page.component';
 
 type HealthResponse = {
   status: string;
@@ -10,7 +9,7 @@ type HealthResponse = {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatButtonModule, HomePageComponent],
+  imports: [RouterOutlet, MatButtonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   standalone: true,
