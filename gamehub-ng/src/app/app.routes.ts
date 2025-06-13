@@ -9,6 +9,20 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'games',
+    loadComponent: () =>
+      import('./games/games.component').then(
+        (m) => m.GamesComponent
+      ),
+  },
+  {
+    path: 'games/:game',
+    loadComponent: () =>
+      import('./game-page/game-page.component').then(
+        (m) => m.GamePageComponent
+      ),
+  },
+  {
     path: '',
     pathMatch: 'full',
     redirectTo: 'home',
