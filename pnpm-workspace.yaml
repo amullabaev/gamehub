@@ -6,4 +6,5 @@ packages:
 ignoredBuiltDependencies:
   - '@prisma/client'
   - '@prisma/engines'
+  - lmdb
   - prisma
