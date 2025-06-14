@@ -9,6 +9,13 @@ h1 {
 }
 
 main {
-  //   padding: 0 15px 15px 15px;
   padding: 15px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  background: rgb(222, 236, 249);
+  width: 100%;
+  padding: 0 16px;
 }

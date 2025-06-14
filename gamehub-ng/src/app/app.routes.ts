@@ -23,6 +23,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'clicker',
+    loadComponent: () =>
+      import('./clicker/clicker.component').then(
+        (m) => m.ClickerComponent
+      ),
+  },
+  {
     path: '',
     pathMatch: 'full',
     redirectTo: 'home',
