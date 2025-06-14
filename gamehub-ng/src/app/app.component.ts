@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 type HealthResponse = {
   status: string;
@@ -9,7 +9,7 @@ type HealthResponse = {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatButtonModule],
+  imports: [RouterModule, MatButtonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   standalone: true,
@@ -17,7 +17,7 @@ type HealthResponse = {
 export class AppComponent {
   title = 'gamehub-ng';
 
-  value = 0
+  value = signal(0)
   health: string | null = null;
 
   http = inject(HttpClient);
@@ -37,6 +37,6 @@ export class AppComponent {
 
   handleClick() {
     console.log('Button clicked!');
-    this.value++;
+    this.value.update(v => v + 1);
   }
 }

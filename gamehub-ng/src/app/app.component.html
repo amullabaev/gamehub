@@ -1,6 +1,16 @@
 <!-- <app-home-page></app-home-page> -->
-<router-outlet />
+<header>
+  <h1><a routerLink="/home">Game Hub</a></h1>
+</header>
+<main>
+  <!-- <nav>
+    <a routerLink="/home">Home</a>
+    <a routerLink="/games">Games</a>
+    <a routerLink="/about">About</a>
+  </nav> -->
+  <router-outlet />
 
-<p>{{ value }}</p>
-<p>healthCheck: {{health}}</p>
-<button matButton="tonal" (click)="handleClick()">Click me!</button>
+  <p>{{ value() }}</p>
+  <p>healthCheck: {{ health }}</p>
+  <button matButton="tonal" (click)="handleClick()">Click me!</button>
+</main>
