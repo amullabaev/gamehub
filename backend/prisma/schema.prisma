@@ -13,3 +13,9 @@ model User {
   name      String?
   createdAt DateTime @default(now())
 }
+
+model ClickerScore {
+  id        String   @id @default(cuid())
+  score     Int
+  timestamp DateTime @default(now())
+}
