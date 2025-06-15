@@ -1,13 +1,9 @@
 <!-- <app-home-page></app-home-page> -->
 <header>
+  <mat-icon (click)="back()" fontIcon="chevron_left" class="icon-back"></mat-icon>
   <h1><a routerLink="/home">Game Hub</a></h1>
 </header>
 <main>
-  <!-- <nav>
-    <a routerLink="/home">Home</a>
-    <a routerLink="/games">Games</a>
-    <a routerLink="/about">About</a>
-  </nav> -->
   <router-outlet />
 </main>
 <footer>

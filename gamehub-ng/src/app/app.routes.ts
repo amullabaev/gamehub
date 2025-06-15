@@ -14,21 +14,30 @@ export const routes: Routes = [
       import('./games/games.component').then(
         (m) => m.GamesComponent
       ),
+      children: [
+        {
+          path: 'clicker',
+          loadComponent: () =>
+            import('./clicker/clicker.component').then(
+              (m) => m.ClickerComponent
+            ),
+        },
+      ],
   },
-  {
-    path: 'games/:game',
-    loadComponent: () =>
-      import('./game-page/game-page.component').then(
-        (m) => m.GamePageComponent
-      ),
-  },
-  {
-    path: 'clicker',
-    loadComponent: () =>
-      import('./clicker/clicker.component').then(
-        (m) => m.ClickerComponent
-      ),
-  },
+  // {
+  //   path: 'games/:game',
+  //   loadComponent: () =>
+  //     import('./game-page/game-page.component').then(
+  //       (m) => m.GamePageComponent
+  //     ),
+  // },
+  // {
+  //   path: 'clicker',
+  //   loadComponent: () =>
+  //     import('./clicker/clicker.component').then(
+  //       (m) => m.ClickerComponent
+  //     ),
+  // },
   {
     path: '',
     pathMatch: 'full',

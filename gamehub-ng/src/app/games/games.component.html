@@ -1,1 +1,11 @@
-<p>games works!</p>
+<nav>
+    @if (this.currentRoute !== '/games/clicker') {
+      <a routerLink="clicker">clicker</a>
+    }
+    <!-- <a routerLink="/games/grid">Grid</a>
+    <a routerLink="/games/featured">Featured</a>
+    <a routerLink="/games/featured/1">Featured Game 1</a>
+    <a routerLink="/games/featured/2">Featured Game 2</a>
+    <a routerLink="/games/featured/3">Featured Game 3</a> -->
+</nav>
+<router-outlet></router-outlet>
