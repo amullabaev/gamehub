@@ -21,8 +21,16 @@ export class ClickerComponent {
     console.log('Score saved:', this.score());
     const resultBody = {
       score: this.score(),
-      timestamp: new Date().toISOString(),
     }
-    this.http.post('/api/save/clicker', resultBody).subscribe();
+    this.http.post('http://localhost:3001/api/scores/clicker/save', resultBody).subscribe();
+  }
+
+  ngOnInit() {
+    this.http.get<{ scores: { score: number, timestamp: string }[] }>('http://localhost:3001/api/scores/clicker').subscribe((response) => {
+      console.log('Scores fetched:', response.scores);
+      // if (response.scores.length > 0) {
+      //   this.score.set(response.scores[0].score);
+      // }
+    });
   }
 }
