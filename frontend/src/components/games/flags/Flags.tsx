@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { COUNTRIES } from './countries';
 import { cn, shuffle } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 
 interface FlagItem {
   name: string;
@@ -51,7 +52,8 @@ const Flags = () => {
           const isCorrect = option === question.name;
           const isWrong = showAnswer && option === selected && !isCorrect;
           return (
-            <button
+            <Button
+              variant="outline"
               key={option}
               onClick={() => handleSelect(option)}
               disabled={showAnswer}
@@ -63,17 +65,18 @@ const Flags = () => {
               )}
             >
               {option}
-            </button>
+            </Button>
           );
         })}
       </div>
       {showAnswer && (
-        <button
+        <Button
+          variant="default"
           onClick={handleNext}
           className="mt-2 inline-flex items-center rounded-lg bg-blue-600 px-6 py-3 text-base font-medium text-white shadow-sm transition-colors hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
         >
           Next Question
-        </button>
+        </Button>
       )}
     </div>
   );
